@@ -113,6 +113,8 @@ class Client:
                         self.handle_incoming_message(body)
                     else:
                         self.response_queue.put((status, body))
+                else:
+                    self.response_queue.put((status, body))
             except Exception as e:
                 print("Receive error:", e)
                 break
